@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reminder App</h1>
+        </header>
+        
+        <div class="app-container">
+            <div class="add-reminder">
+                <h2>Add Reminder</h2>
+                <form id="reminder-form">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="Reminder title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" placeholder="Add details"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Due Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Due Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recurring">Recurring</label>
+                        <select id="recurring">
+                            <option value="none" selected>None</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" id="add-btn">Add Reminder</button>
+                </form>
+            </div>
+            
+            <div class="reminders-container">
+                <div class="reminders-header">
+                    <h2>My Reminders</h2>
+                    <div class="filter-controls">
+                        <select id="filter-priority">
+                            <option value="all">All Priorities</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <button id="toggle-completed" class="toggle-btn">Show Completed</button>
+                    </div>
+                </div>
+                <div id="reminders-list">
+                    <!-- Reminders will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <p id="notification-text"></p>
+    </div>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/reminders.js"></script>
+    <script src="./js/ui.js"></script>
+</body>
+</html>
