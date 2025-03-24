@@ -1,6 +1,26 @@
 // reminders.js - Core reminder functionality
+//sample reminder list
+let reminder = [
+    {id: 1, task: 'buy groceries', isComplete: False);
+];
+//function to mark reminder as complete
+function markAsComplete(reminderId){
+    //find reminder by Id
+    let reminder = reminder.find(r => r.id === reminderId);
 
-class ReminderManager {
+    if (reminder) {
+        reminder.isComplete = true; 
+        console.log('Task "$(reminder.task)" marked as complete.');
+    }
+    else {console.log('reminder not found');
+         }
+}
+
+//display all reminders
+console.log(reminders);
+
+    
+    class ReminderManager {
     constructor(api) {
         this.api = api;
         this.showCompleted = false;
